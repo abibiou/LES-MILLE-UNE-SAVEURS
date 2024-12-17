@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace Personnel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+    /* Section Suggestions */
+    .section-suggestions {
+        background-color: #dfb598;;
+        padding: 50px 20px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 30px 0;
+    }
+
+    .section-suggestions h2 {
+        text-align: center;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .section-suggestions p {
+        color: #777;
+        font-size: 1.1rem;
+    }
+
+    /* Carte Suggestions */
+    .suggestion-card {
+        background: #e9e7db;
+        border-radius: 12px;
+        text-align: center;
+        padding: 30px 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .suggestion-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .suggestion-card h5 {
+        color: #333;
+        font-size: 1.2rem;
+        margin: 15px 0 10px;
+    }
+
+    .suggestion-card p {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    .icon-container {
+        font-size: 2.5rem;
+        color: #ff7043;
+        margin-bottom: 10px;
+    }
+
+    .btn-suggestion {
+        background-color: #dfb598;
+        color: white;
+        border-radius: 20px;
+        padding: 8px 20px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    .btn-suggestion:hover {
+        background-color: #dfb598;
+        transform: scale(1.05);
+        color: white;
+    }
+    #reseaux {
+  background-color: #3a3a3a;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.reseaux-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reseaux-container > div {
+  flex: 1 1 calc(33.333% - 20px);
+  min-width: 250px;
+}
+
+.reseaux-container h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.reseaux-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.reseaux-container li {
+  margin-bottom: 10px;
+}
+
+.reseaux-container a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.reseaux-container a:hover {
+  color: #fff;
+}
+
+/* Style pour les icônes de réseaux sociaux */
+.reseaux-sociaux i {
+  margin-right: 8px;
+  color: #555;
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+.reseaux-sociaux a:hover i {
+  color: #fff;
+}
+
+          /* Section générale */
+    .section-container {
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+    }
+
+    h2 {
+        font-size: 2rem;
+        color: #333;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    /* Carte recette */
+    .recipe-card {
+        background: #f9f9f9;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .recipe-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Image de la carte */
+    .recipe-img img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    /* Contenu de la carte */
+    .recipe-content {
+        padding: 15px;
+    }
+
+    .recipe-content h5 {
+        color: #333;
+        font-size: 1.2rem;
+    }
+
+    .recipe-content p {
+        font-size: 0.9rem;
+        color: #666;
+        margin: 10px 0;
+    }
+
+    /* Bouton personnalisé */
+    .btn-recipe {
+        background-color: #ff7043;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        padding: 8px 20px;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+    }
+
+    .btn-recipe:hover {
+        background-color: #e64a19;
+        transform: scale(1.05);
+    }
+        /* Général */
+        body {
+            background-color: #e9e7db;
+            color: #333;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* En-tête */
+        .page-header {
+            color: #333;
+            text-align: center;
+            padding: 60px 0;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Sections */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* Cartes */
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .btn-outline-primary {
+            border-color: #333;
+            color: #333;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #333;
+            color: white;
+        }
+
+        /* Table */
+        .reservation-table {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .table th {
+            background-color: #c89a79;
+            color: white;
+            text-align: center;
+        }
+
+        .table td {
+            text-align: center;
+        }
+
+        /* Suggestions */
+        .suggestion-section {
+            background-color: #dfb598;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .suggestion-item {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        .suggestion-item strong {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #e9e7db;">
+        <div class="container-fluid">
+          <a class="navbar-brand me-auto" href="#">
+            <img src="../LES-MILLE-UNE-SAVEURS-main/Logo Créa en forme de cercle.png" alt="Les Milles et Une Saveurs" style="height: 40px;">
+          </a>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2 fw-bold active" href="index.html">ACCUEIL</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2 fw-bold" href="nosatelier.html">NOS ATELIERS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2 fw-bold" href="#">RECETTES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2 fw-bold" href="#">RÉSERVER UN ATELIER</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+<!-- En-tête -->
+<header class="page-header">
+    <div class="container">
+        <h1 class="mt-5">Mon Espace Personnel</h1>
+        <p class="lead">Gérez vos ateliers, recettes et profitez de suggestions personnalisées.</p>
+    </div>
+</header>
+
+<!-- Contenu principal -->
+<main class="container mt-3"  style="background-color: #e9e7db;">
+    <!-- Historique des ateliers -->
+    <section>
+        <h2 class="section-title fw-bold">Historique des Ateliers Suivis</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card" style="background-color: #dfb598;">
+                    <img src="tabitha-turner-Ns2aJ5OXKds-unsplash.jpg" alt="Atelier Pâtisserie">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Atelier Pâtisserie</h5>
+                        <p class="card-text">Suivi le 12/11/2024.</p>
+                        <a href="#focus-section" class="btn" style="background-color: #e9e7db; color: black">Voir les détails</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card" style="background-color: #dfb598;">
+                    <img src="monde.jpg" alt="Cuisine Exotique">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Cuisine de Rue du Monde</h5>
+                        <p class="card-text"> Suivi le 05/10/2024.</p>
+                        <a href="#focus-section" class="btn" style="background-color: #e9e7db; color: black">Voir les détails</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card" style="background-color: #dfb598;">
+                    <img src="annie-spratt-UyEmagArOLY-unsplash (1).jpg" alt="Gastronomie Française">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Cuisine en Co-Op</h5>
+                        <p class="card-text">Suivi le 20/09/2024.</p>
+                        <a href="#focus-section" class="btn" style="background-color: #e9e7db; color: black">Voir les détails</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Gestion des réservations -->
+    <section class="mt-5">
+        <h2 class="section-title">Gestion des Réservations</h2>
+        <div class="reservation-table table-responsive p-4 rounded-3" style="background-color: #dfb598; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);">
+            <table class="table align-middle mb-0">
+                <thead>
+                    <tr style="background: linear-gradient(to right, #7e57c2, #9575cd); color: white;">
+                        <th class="py-3 text-center">Atelier</th>
+                        <th class="py-3 text-center">Date</th>
+                        <th class="py-3 text-center">Statut</th>
+                        <th class="py-3 text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Première ligne -->
+                    <tr class="reservation-row" style="background-color: #e9e7db">
+                        <td class="text-center fw-bold" style="background-color: #e9e7db">Atelier Pâtisserie</td>
+                        <td class="text-center" style="background-color: #e9e7db">15/12/2024</td>
+                        <td class="text-center" style="background-color: #e9e7db">
+                            <span class="badge rounded-pill" style="color: #388e3c; padding: 8px 12px;">
+                                ✅ Confirmé
+                            </span>
+                        </td>
+                        <td class="text-center" style="background-color: #e9e7db">
+                            <button class="btn btn-sm action-btn" style="background-color: #e9e7db; background: linear-gradient(to right, #ff8a65, #ff7043); color: white; border: none; border-radius: 20px; padding: 6px 15px;">
+                                Annuler
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Deuxième ligne -->
+                    <tr class="reservation-row" style="background-color: #e9e7db">
+                        <td class="text-center fw-bold" style="background-color: #e9e7db">Atelier Cupcakes Décorés</td>
+                        <td class="text-center" style="background-color: #e9e7db">20/12/2024</td>
+                        <td class="text-center" style="background-color: #e9e7db">
+                            <span class="badge rounded-pill" style="background: #fff3e0; color: #fb8c00; padding: 8px 12px; background-color: #e9e7db">
+                                ⏳ En Attente
+                            </span>
+                        </td>
+                        <td class="text-center" style="background-color: #e9e7db">
+                            <button class="btn btn-sm action-btn" style="background: linear-gradient(to right, #4db6ac, #26a69a); color: white; border: none; border-radius: 20px; padding: 6px 15px; background-color: #e9e7db">
+                                Modifier
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Troisième ligne -->
+                    <tr class="reservation-row" style="background-color: #e9e7db">
+                        <td class="text-center fw-bold" style="background-color: #e9e7db">Atelier Création de Cocktails</td>
+                        <td class="text-center" style="background-color: #e9e7db">05/01/2025</td>
+                        <td class="text-center" style="background-color: #e9e7db">
+                            <span class="badge rounded-pill" style="color: #d81b60; padding: 8px 12px;">
+                                ❌ Annulé
+                            </span>
+                        </td>
+                        <td class="text-center" style="background-color: #e9e7db">
+                            <button class="btn btn-sm action-btn" style="background: linear-gradient(to right, #e7aa7e, #c89a79); color: white; border: none; border-radius: 20px; padding: 6px 15px;">
+                                Réserver à Nouveau
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    
+    <div class="section-container mt-5" style="background-color: #dfb598;">
+        <h2>🍲 Recettes Téléchargées</h2>
+        <div class="row g-4">
+            <!-- Carte 1 -->
+            <div class="col-md-4">
+                <div class="recipe-card">
+                    <div class="recipe-img">
+                        <img src="lasagne.jpg" alt="Lasagnes Maison">
+                    </div>
+                    <div class="recipe-content text-center" style="background-color: #e9e7db">
+                        <h5 class="fw-bold mt-2">Lasagnes Maison</h5>
+                        <p>Une recette traditionnelle italienne avec des saveurs riches et gourmandes.</p>
+                        <button class="btn btn-recipe" style="background-color: #dfb598;">Voir la Recette</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Carte 2 -->
+            <div class="col-md-4">
+                <div class="recipe-card">
+                    <div class="recipe-img">
+                        <img src="tartetatin.jpg" alt="Tarte Tatin">
+                    </div>
+                    <div class="recipe-content text-center" style="background-color: #e9e7db">
+                        <h5 class="fw-bold mt-2">Tarte Tatin</h5>
+                        <p>Découvrez la douceur de cette tarte caramélisée aux pommes.</p>
+                        <button class="btn btn-recipe" style="background-color: #dfb598;">Voir la Recette</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Carte 3 -->
+            <div class="col-md-4">
+                <div class="recipe-card">
+                    <div class="recipe-img">
+                        <img src="ratatouille-provencale.jpeg" alt="Ratatouille Provençale">
+                    </div>
+                    <div class="recipe-content text-center" style="background-color: #e9e7db">
+                        <h5 class="fw-bold mt-2">Ratatouille Provençale</h5>
+                        <p>Un plat d'été léger et savoureux qui célèbre les légumes du soleil.</p>
+                        <button class="btn btn-recipe" style="background-color: #dfb598;">Voir la Recette</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Suggestions personnalisées -->
+    <div class="section-suggestions">
+        <h2>✨ Suggestions Personnalisées</h2>
+        <p class="text-center mb-5" style="color: #333">
+            Découvrez nos recommandations spécialement conçues pour vous !
+        </p>
+        <div class="row g-4">
+            <!-- Carte Suggestion 1 -->
+            <div class="col-md-4">
+                <div class="suggestion-card">
+                    <div class="icon-container">
+                        <i class="bi bi-egg-fried"></i>
+                    </div>
+                    <h5>Recette du Mois : Paella</h5>
+                    <p>Une délicieuse paella espagnole avec fruits de mer et épices.</p>
+                    <a href="#" class="btn btn-suggestion">Voir la Recette</a>
+                </div>
+            </div>
+    
+            <!-- Carte Suggestion 2 -->
+            <div class="col-md-4">
+                <div class="suggestion-card">
+                    <div class="icon-container">
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <h5>Atelier Recommandé</h5>
+                    <p>Rejoignez notre atelier "Pâtisserie Française" pour réaliser des éclairs.</p>
+                    <a href="#" class="btn btn-suggestion">Réserver Maintenant</a>
+                </div>
+            </div>
+    
+            <!-- Carte Suggestion 3 -->
+            <div class="col-md-4">
+                <div class="suggestion-card">
+                    <div class="icon-container">
+                        <i class="bi bi-heart-fill"></i>
+                    </div>
+                    <h5>Suggestion Bien-être</h5>
+                    <p>Des recettes saines et rapides pour une alimentation équilibrée.</p>
+                    <a href="#" class="btn btn-suggestion">Découvrir Plus</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<section id="reseaux" class="mt-5">
+    <div class="reseaux-container mt-4">
+      <!-- Liens rapides -->
+      <div class="liens-rapides">
+        <h3 class="fw-semibold" style="color: #977359;">LIENS RAPIDES</h3>
+        <ul>
+          <li><a href="index.html">ACCUEIL</a></li>
+          <li><a href="ateliers.html">NOS ATELIERS</a></li>
+          <li><a href="contact.html">CONTACTEZ-NOUS</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+  
+      <div class="reseaux-sociaux">
+        <h3 class="fw-semibold" style="color: #977359;">SUIVEZ-NOUS</h3>
+        <ul>
+            <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i> TWITTER</a></li>
+            <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> INSTAGRAM</a></li>
+        </ul>
+      </div>
+  
+      <div class="partenaires">
+        <h3 class="fw-semibold" style="color: #977359;">NOS PARTENAIRES</h3>
+        <ul>
+          <li><a href="https://partenaire1.com" target="_blank">GetYourGuide</a></li>
+          <li><a href="https://partenaire2.com" target="_blank">Funnbooker</a></li>
+          <li><a href="https://partenaire3.com" target="_blank">Partenaire Agricole</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container text-center mt-3" style="color: #fff;">
+        <p>&copy; 2024 Les Mille et Une Saveurs. Tous droits réservés.</p>
+    </div>
+  </section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
