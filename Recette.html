@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recettes</title>
+  <!-- Liens Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .card-recipe {
+  border-radius: 15px; /* Arrondir les bords de la carte */
+  overflow: hidden; /* Empêcher le contenu de déborder */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ajouter une ombre subtile pour l'effet 3D */
+}
+
+.card-body {
+  border-radius: 0 0 15px 15px; /* Arrondir le bas de la carte */
+  background-color: #c89a79; /* Couleur de fond */
+}
+
+.card-recipe:hover {
+  transform: translateY(-5px); /* Légère animation au survol */
+}
+
+.card-recipe:hover .card-body {
+  background-color: #d9a77d; /* Changer la couleur de fond lors du survol */
+}
+    #reseaux {
+  background-color: #3a3a3a;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.reseaux-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reseaux-container > div {
+  flex: 1 1 calc(33.333% - 20px);
+  min-width: 250px;
+}
+
+.reseaux-container h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.reseaux-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.reseaux-container li {
+  margin-bottom: 10px;
+}
+
+.reseaux-container a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.reseaux-container a:hover {
+  color: #fff;
+}
+
+/* Style pour les icônes de réseaux sociaux */
+.reseaux-sociaux i {
+  margin-right: 8px;
+  color: #555;
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+.reseaux-sociaux a:hover i {
+  color: #fff;
+}
+       body {
+            font-family: 'Poppins', sans-serif;
+            background: #e9e7db;
+        }
+    .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('recettt.jpg') center/cover no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      color: white;
+      text-align: center;
+      padding: 100px 0;
+    }
+    .card-recipe img {
+      height: 200px;
+      object-fit: cover;
+    }
+    .card-recipe {
+      transition: transform 0.3s;
+    }
+    .card-recipe:hover {
+      transform: scale(1.05);
+    }
+    .recipe-detail {
+      background-color: #e9e7db;
+      padding: 40px 20px;
+    }
+    .recipe-video {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<section>
+    <nav class="navbar navbar-expand-lg fixed-top hum" style="background-color: #e9e7db;">
+        <div class="container-fluid">
+          <a class="navbar-brand me-auto" href="#">
+            <img src="Logo Créa en forme de cercle.png" alt="Les Milles et Une Saveurs" style="height: 40px;">
+          </a>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2 fw-bold active" aria-current="page" href="index.html">ACCUEIL</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2 fw-bold"  href="nosatelier.html">NOS ATELIERS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2 fw-bold"  href="Recette.html">RECETTES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2 fw-bold"  href="#">RÉSERVER UN ATELIER</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+</section>
+  <!-- Section Hero -->
+  <section class="hero-section">
+    <h1 class="display-4 fw-semibold">Trouvez votre recette idéale</h1>
+    <p class="fw-semibold">Recherche par ingrédient, type de plat, ou origine culinaire</p>
+    <form class="d-flex justify-content-center mt-4">
+      <input class="form-control w-50" type="search" placeholder="Rechercher..." aria-label="Search">
+      <button class="btn ms-2 fw-semibold" type="submit" style="background-color: #c89a79;">Rechercher</button>
+    </form>
+  </section>
+
+ <!-- Section Liste des Recettes -->
+<section class="container my-5">
+    <h2 class="text-center mb-4 fw-semibold">Nos Recettes</h2>
+    <div class="row">
+      <!-- Recette 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card card-recipe">
+          <img src="carbonara.jpg" class="card-img-top" alt="Recette 1">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">Spaghetti Carbonara</h5>
+            <p class="card-text">Temps de préparation: 30 minutes</p>
+          </div>
+        </div>
+      </div>
+      <!-- Recette 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card card-recipe">
+          <img src="salade.jpg" class="card-img-top" alt="Recette 2">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">Salade César</h5>
+            <p class="card-text">Temps de préparation: 15 minutes</p>
+          </div>
+        </div>
+      </div>
+      <!-- Recette 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card card-recipe">
+          <img src="tacos.jpg" class="card-img-top" alt="Recette 3">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">Tacos Mexicains</h5>
+            <p class="card-text">Temps de préparation: 20 minutes</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Détail de la Recette -->
+  <section class="recipe-detail">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h3 class="fw-semibold">Spaghetti Carbonara</h3>
+          <p class="mt-4"><strong>Ingrédients :</strong> Spaghetti, œufs, pancetta, parmesan, crème fraîche.</p>
+          <p class="mt-2"><strong>Instructions :</strong> Faites cuire les spaghetti dans de l'eau salée. Pendant ce temps, faites revenir la pancetta dans une poêle. Battez les œufs avec le parmesan râpé. Mélangez tous les ingrédients et servez chaud.</p>
+          <p class="mt-2"><strong>Conseils :</strong> Vous pouvez ajouter un peu de lait pour alléger la sauce.</p>
+        </div>
+        <div class="col-md-6 recipe-video">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/kqVzOjfRZPk" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="recipe-detail container">
+    <div class="row">
+        <div class="col-md-6 recipe-video">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/EL0aR13bQ6Q" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+          </div>
+      <div class="col-md-6 ">
+        <h3 class="fw-semibold">Tacos Mexicains</h3>
+        <p class="mt-4"><strong>Ingrédients :</strong> Tortillas, viande hachée, fromage, avocat, salsa.</p>
+        <p class="mt-2"><strong>Instructions :</strong> Faites cuire la viande hachée avec des épices mexicaines. Garnissez les tortillas de viande, fromage et légumes.</p>
+        <p class="mt-2"><strong>Conseils :</strong> Pour une version plus légère, utilisez des tortillas de maïs ou de blé complet.</p>
+      </div>
+    </div>
+  </section>
+ <!-- Section Détail de la Recette - Salade César -->
+ <section class="recipe-detail container">
+    <div class="row">
+      <div class="col-md-6">
+        <h3 class="fw-semibold">Salade César</h3>
+        <p class="mt-4"><strong>Ingrédients :</strong> Laitue, croutons, poulet grillé, sauce César, parmesan.</p>
+        <p class="mt-2"><strong>Instructions :</strong> Mélangez la laitue et les croutons dans un grand bol, ajoutez le poulet grillé et nappez de sauce César.</p>
+        <p class="mt-2"><strong>Conseils :</strong> Pour plus de saveur, ajoutez un peu de bacon croustillant dans votre salade.</p>
+      </div>
+      <div class="col-md-6 recipe-video">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/Ek1qivZPZ90" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="reseaux" class="mt-5">
+    <div class="reseaux-container mt-4">
+      <!-- Liens rapides -->
+      <div class="liens-rapides">
+        <h3 class="fw-semibold" style="color: #977359;">LIENS RAPIDES</h3>
+        <ul>
+          <li><a href="index.html">ACCUEIL</a></li>
+          <li><a href="ateliers.html">NOS ATELIERS</a></li>
+          <li><a href="contact.html">CONTACTEZ-NOUS</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+  
+      <div class="reseaux-sociaux">
+        <h3 class="fw-semibold" style="color: #977359;">SUIVEZ-NOUS</h3>
+        <ul>
+          <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i> TWITTER</a></li>
+          <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> INSTAGRAM</a></li>
+        </ul>
+      </div>
+  
+      <div class="partenaires">
+        <h3 class="fw-semibold" style="color: #977359;">NOS PARTENAIRES</h3>
+        <ul>
+          <li><a href="https://partenaire1.com" target="_blank">GetYourGuide</a></li>
+          <li><a href="https://partenaire2.com" target="_blank">Funnbooker</a></li>
+          <li><a href="https://partenaire3.com" target="_blank">Partenaire Agricole</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container text-center mt-3" style="color: #fff;">
+        <p>&copy; 2024 Les Mille et Une Saveurs. Tous droits réservés.</p>
+    </div>
+  </section>
+
+  <!-- Scripts Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
