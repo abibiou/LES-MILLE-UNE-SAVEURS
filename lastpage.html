@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ateliers Ludiques</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+            #reseaux {
+  background-color: #3a3a3a;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.reseaux-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reseaux-container > div {
+  flex: 1 1 calc(33.333% - 20px);
+  min-width: 250px;
+}
+
+.reseaux-container h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.reseaux-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.reseaux-container li {
+  margin-bottom: 10px;
+}
+
+.reseaux-container a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.reseaux-container a:hover {
+  color: #fff;
+}
+
+/* Style pour les icônes de réseaux sociaux */
+.reseaux-sociaux i {
+  margin-right: 8px;
+  color: #555;
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+.reseaux-sociaux a:hover i {
+  color: #fff;
+}
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #e9e7db;
+            color: #333;
+        }
+
+        .header-workshops {
+            background: url('header-workshops.jpg') no-repeat center center/cover;
+            padding: 100px 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        .header-workshops h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .description-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .description-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #dfb598;
+        }
+
+        .description-section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .malus-list {
+            padding: 30px 0;
+        }
+
+        .malus-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .malus-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .malus-card img {
+            height: 80px;
+            margin-bottom: 15px;
+        }
+
+        .malus-card h5 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .carousel-item img {
+            border-radius: 15px;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        .registration-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-custom {
+            background-color: #dfb598;
+            color: white;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #c89a79;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    !-- Navbar -->
+    <section>
+        <nav class="navbar navbar-expand-lg fixed-top hum" style="background-color: #e9e7db;">
+            <div class="container-fluid">
+              <a class="navbar-brand me-auto" href="#">
+                <img src="Logo Créa en forme de cercle.png" alt="Les Milles et Une Saveurs" style="height: 40px;">
+              </a>
+    
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2 fw-bold active" href="index.html">ACCUEIL</a>
+                            </li>
+    
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2 fw-bold"  href="nosatelier.html">NOS ATELIERS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2 fw-bold" aria-current="page" href="Recette.html">RECETTES</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2 fw-bold"  href="#">RÉSERVER UN ATELIER</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </section>
+    <header class="header-workshops">
+        <div class="container">
+            <h1>Découvrez Nos Ateliers Ludiques</h1>
+            <p>Nos ateliers combinent des jeux et des défis où chaque groupe doit collaborer malgré des handicaps originaux. 
+                Ces activités visent à développer la communication, la coordination et la gestion du stress, tout en s'amusant !</p>
+        </div>
+    </header>
+    <section class="malus-list mb-4">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-md-4">
+                    <div class="malus-card" style="background-color: #c89a79;">
+                        <img src="voitpas.jpg" alt="Ne voit pas">
+                        <h5>Ne voit pas</h5>
+                        <p>Un membre de l'équipe doit accomplir sa tâche les yeux bandés.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="malus-card" style="background-color: #c89a79;">
+                        <img src="parlepas.jpg" alt="Ne parle pas">
+                        <h5>Ne parle pas</h5>
+                        <p>Un joueur doit se débrouiller sans dire un mot. Communication non-verbale requise !</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="malus-card" style="background-color: #c89a79;">
+                        <img src="gant.jpg" alt="Gants de cuisine">
+                        <h5>Gants de cuisine</h5>
+                        <p>Manipulez les objets avec des gants encombrants. Bonne chance !</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="malus-card" style="background-color: #c89a79;">
+                        <img src="lunette.jpg" alt="Lunettes de simulation d'alcool">
+                        <h5>Lunettes d'alcool</h5>
+                        <p>Simulez une vision floue avec des lunettes de distorsion.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+    
+                    </div>
+                <div class="col-md-4">
+                    <div class="malus-card" style="background-color: #c89a79;">
+                        <img src="nentendpas.jpg" alt="N'entend pas">
+                        <h5>N'entend pas</h5>
+                        <p>Un joueur doit accomplir sa tâche en silence total, sans entendre ses coéquipiers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="my-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Inscrivez-vous</h2>
+            <form class="registration-form mx-auto" style="max-width: 600px; background-color: #c89a79;">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nom</label>
+                    <input type="text" class="form-control" id="name" placeholder="Votre nom">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Votre email">
+                </div>
+                <div class="mb-3">
+                    <label for="groupSize" class="form-label">Nombre de participants (Maximum 5 personnnes) </label>
+                    <input type="number" class="form-control" id="groupSize" placeholder="Nombre de participants">
+                </div>
+                <button type="submit" class="btn btn-custom w-100">S'inscrire</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="reseaux" class="mt-5">
+        <div class="reseaux-container mt-4">
+          <!-- Liens rapides -->
+          <div class="liens-rapides">
+            <h3 class="fw-semibold" style="color: #977359;">LIENS RAPIDES</h3>
+            <ul>
+              <li><a href="index.html">ACCUEIL</a></li>
+              <li><a href="ateliers.html">NOS ATELIERS</a></li>
+              <li><a href="contact.html">CONTACTEZ-NOUS</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </div>
+      
+          <div class="reseaux-sociaux">
+            <h3 class="fw-semibold" style="color: #977359;">SUIVEZ-NOUS</h3>
+            <ul>
+              <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i> TWITTER</a></li>
+              <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> INSTAGRAM</a></li>
+            </ul>
+          </div>
+      
+          <div class="partenaires">
+            <h3 class="fw-semibold" style="color: #977359;">NOS PARTENAIRES</h3>
+            <ul>
+              <li><a href="https://partenaire1.com" target="_blank">GetYourGuide</a></li>
+              <li><a href="https://partenaire2.com" target="_blank">Funnbooker</a></li>
+              <li><a href="https://partenaire3.com" target="_blank">Partenaire Agricole</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="container text-center mt-3" style="color: #fff;">
+            <p>&copy; 2024 Les Mille et Une Saveurs. Tous droits réservés.</p>
+        </div>
+      </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
