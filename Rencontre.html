@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation Atelier de Cuisine</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%; /* Assurez que le <html> et <body> remplissent l'espace vertical */
+            margin: 0;    /* Supprimez les marges */
+        }
+
+        body {
+            display: flex;
+            flex-direction: column; /* Organisez les enfants (contenu et footer) en colonne */
+            justify-content: space-between; /* Place les éléments en haut et en bas */
+            background-color: #e9e7db;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        main {
+            flex: 1; /* Fait en sorte que le contenu principal prenne tout l'espace disponible */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px 30px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .form-container h1 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        .btn-custom {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+        }
+
+        .btn-custom:hover {
+            background-color: #e65a50;
+        }
+
+        .info {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #777777;
+        }
+
+        #reseaux {
+            background-color: #3a3a3a;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .reseaux-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .reseaux-container > div {
+            flex: 1 1 calc(33.333% - 20px);
+            min-width: 250px;
+        }
+
+        .reseaux-container h3 {
+            font-size: 1.5em;
+            color: #977359;
+            margin-bottom: 15px;
+        }
+
+        .reseaux-container ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .reseaux-container li {
+            margin-bottom: 10px;
+        }
+
+        .reseaux-container a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .reseaux-container a:hover {
+            color: #fff;
+        }
+
+        .reseaux-sociaux i {
+            margin-right: 8px;
+            color: #555;
+            font-size: 1.2em;
+            vertical-align: middle;
+        }
+
+        .reseaux-sociaux a:hover i {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <section>
+        <nav class="navbar navbar-expand-lg fixed-top hum" style="background-color: #e9e7db;">
+            <div class="container-fluid">
+                <a class="navbar-brand me-auto" href="#">
+                    <img src="Logo Créa en forme de cercle.png" alt="Les Milles et Une Saveurs" style="height: 40px;">
+                </a>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2 fw-bold active" href="index.html">ACCUEIL</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2 fw-bold" href="nosatelier.html">NOS ATELIERS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2 fw-bold" href="Recette.html">RECETTES</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2 fw-bold" href="#">RÉSERVER UN ATELIER</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </section>
+
+    <!-- Contenu principal -->
+    <main>
+        <section class="mt-5">
+            <div class="form-container mt-5" style="background-color: #c89a79;">
+                <h1 class="fw-semibold mt-3">Réserver l'atelier de rencontre</h1>
+                <p class="subtitle text-center">Vivez une expérience culinaire unique et partagez un moment convivial avec d'autres passionnés.</p>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Votre prénom :</label>
+                    <input type="text" class="form-control" id="name" name="name" style="background-color: #e9e7db;" placeholder="Votre prénom" required>
+                    <label for="name" class="form-label mt-2">Votre nom :</label>
+                    <input type="text" class="form-control" id="name" name="name" style="background-color: #e9e7db;" placeholder="Votre nom" required>
+                    <label for="name" class="form-label mt-2">Votre email:</label>
+                    <input type="text" class="form-control" id="name" name="name" style="background-color: #e9e7db;" placeholder="Votre email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Date de réservation :</label>
+                    <input type="email" class="form-control" id="email" name="email" style="background-color: #e9e7db;" placeholder="Date" required>
+                </div>
+                <div class="mb-3">
+                    <label for="atelier" class="form-label">Choisissez un atelier :</label>
+                    <select class="form-select" id="atelier" name="atelier" style="background-color: #e9e7db;" required>
+                        <option value="" style="background-color: #e9e7db;">-- Sélectionnez un atelier --</option>
+                        <option value="patisserie" style="background-color: #e9e7db;">Atelier Pâtisserie</option>
+                        <option value="cuisine_traditionnelle" style="background-color: #e9e7db;">Cuisine Traditionnelle</option>
+                        <option value="vegan" style="background-color: #e9e7db;">Cuisine Vegan</option>
+                        <option value="italienne" style="background-color: #e9e7db;">Cuisine Italienne</option>
+                    </select>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="match" name="match">
+                    <label class="form-check-label" for="match">Je souhaite être avec une personne inconnue</label>
+                </div>
+                <button type="submit" class="btn btn-custom w-100" style="background-color: #dfb598;">Réserver</button>
+                <div class="info" style="color: #333333;">
+                    Nous vous confirmerons votre réservation par email.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <section id="reseaux" class="mt-5">
+        <div class="reseaux-container mt-4">
+            <div class="liens-rapides">
+                <h3 class="fw-semibold" style="color: #977359;">LIENS RAPIDES</h3>
+                <ul>
+                    <li><a href="index.html">ACCUEIL</a></li>
+                    <li><a href="ateliers.html">NOS ATELIERS</a></li>
+                    <li><a href="contact.html">CONTACTEZ-NOUS</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="reseaux-sociaux">
+                <h3 class="fw-semibold" style="color: #977359;">SUIVEZ-NOUS</h3>
+                <ul>
+                    <li><a href="#"><i class="bi bi-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="bi bi-twitter"></i> Twitter</a></li>
+                    <li><a href="#"><i class="bi bi-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+            <div class="partenaires">
+                <h3 class="fw-semibold" style="color: #977359;">PARTENAIRES</h3>
+                <ul>
+                    <li><a href="#">Partenaire 1</a></li>
+                    <li><a href="#">Partenaire 2</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container text-center mt-3" style="color: #fff;">
+            <p>&copy; 2024 Les Mille et Une Saveurs. Tous droits réservés.</p>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
